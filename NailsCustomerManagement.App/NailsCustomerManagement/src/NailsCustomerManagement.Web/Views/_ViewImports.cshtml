@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using NailsCustomerManagement.Web
+@using NailsCustomerManagement.Application
+@using NailsCustomerManagement.Core.Enums
+
+@addTagHelper *, NailsCustomerManagement.Web
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Http.Features
+@using Microsoft.Extensions.Options
+@inject IOptions<AppSettings> settings
+@*@inject IViewLocalizer Localizer*@
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@using NailsCustomerManagement.Core.Statics
+@using NailsCustomerManagement.Helpers
+@using NailsCustomerManagement.Web.Extensions
+
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor

@@ -1,0 +1,60 @@
+﻿@model NailsCustomerManagement.Application.ViewModels.AppointmentVM.InsertAppointmentVM
+
+<modal size="modal-m" id="insertAppointmentModal" title="@SharedLocalizer["Insert new appointment"].Value" data-backdrop="static" data-keyboard="false">
+    <modal-body>
+        <form id="insertAppointmentForm">
+            <input type="hidden" asp-for="AppointmentId" />
+            <input type="hidden" asp-for="CustomerId" />
+            <div class="row">
+                <label asp-for="InsertAppointment.SelectedServiceTypeId" class="col-lg-12 col-form-label">@SharedLocalizer["Choose service type"].Value<span class="requiredInput">*</span>:</label>
+                <div class="form-group col-lg-12">
+                    <select asp-for="InsertAppointment.SelectedServiceTypeId" class="form-control" asp-items="Model.ServiceTypes">
+                        <option selected="selected" value="">@SharedLocalizer["--Please select--"]</option>
+                        
+                    </select>
+                    <span asp-validation-for="InsertAppointment.SelectedServiceTypeId"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="InsertAppointment.ItemDate" class="col-lg-3 col-form-label text-right">@SharedLocalizer["Date"]:</label>
+                <div class="col-lg-8">
+                    <div class="input-group date datepickers" id="selectedProtocolItemDueDate" data-target-input="nearest">
+                        <input asp-for="InsertAppointment.ItemDate" type="text" data-target="#selectedProtocolItemDueDate" class="form-control datetimepicker datetimepicker-input cursorPointer" data-toggle="datetimepicker" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                        <div class="input-group-append" data-target="#selectedProtocolItemDueDate" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                        </div>
+                    </div>
+                    <span asp-validation-for="InsertAppointment.ItemDate"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="InsertAppointment.ItemTime" class="col-lg-3 col-form-label text-right">@SharedLocalizer["Time"]<span class="requiredInput">*</span>:</label>
+                <div class="col-lg-8">
+                    <input asp-for="InsertAppointment.ItemTime" class="form-control" placeholder="" autocomplete="off" maxlength="18">
+                    <span asp-validation-for="InsertAppointment.ItemTime"></span>
+                </div>
+            </div>
+            <div class="row">
+                <label asp-for="InsertAppointment.SelectedPaymentTypeId" class="col-lg-12 col-form-label">@SharedLocalizer["Choose payment type"].Value<span class="requiredInput">*</span>:</label>
+                <div class="form-group col-lg-12">
+                    <select asp-for="InsertAppointment.SelectedPaymentTypeId" class="form-control" asp-items="Model.ServiceTypes">
+                        <option selected="selected" value="">@SharedLocalizer["--Please select--"]</option>
+
+                    </select>
+                    <span asp-validation-for="InsertAppointment.SelectedPaymentTypeId"></span>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-lg-12 col-form-label">@SharedLocalizer["Title"]:</label>
+                <div class="form-group col-lg-12">
+                    <textarea asp-for="InsertAppointment.AppointmentName" class="form-control" rows="3" placeholder="@SharedLocalizer["Title"]"></textarea>
+                </div>
+            </div>
+        </form>
+    </modal-body>
+    <modal-footer id="btn-modal-cancel" dismiss-text="@SharedLocalizer["Cancel"].Value">
+        <button id="btnConfirmeInsertAppointment" class="btn btn-primary" title="@SharedLocalizer["Confirm"].Value">@SharedLocalizer["Confirm"].Value</button>
+    </modal-footer>
+</modal>
+
+

@@ -1,0 +1,1165 @@
+﻿/*Template footer setup FOR IE 11*/
+body, html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active {
+    outline: 0px !important;
+    -webkit-appearance: none;
+    box-shadow: none !important;
+}*/
+
+.wrapper {
+    position: relative;
+    padding-bottom: 42px;
+    min-height: 100%;
+    background: #f4f6f9;
+}
+
+.main-footer {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+/* Profile*/
+.profile-image {
+    background: #f4f6f9;
+    border-radius: 50%;
+    color: #343a40;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    float: left;
+    margin-right: 5px;
+    margin-top: -2px;
+}
+
+    .profile-image i {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.profile-image-dropdown i {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-image-dropdown {
+    background: #f4f6f9;
+    border-radius: 50%;
+    color: #343a40;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    font-size: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.dropdown-header-custom {
+    background: #0fa0d0;
+    color: white;
+    background: #6c757d;
+}
+
+.dropdown-menu .dropdown-item {
+    font-size: .85rem !important;
+    height: 38px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown .nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.field-validation-error {
+    color: #fb6b5b;
+}
+/* Breadcrumb */
+.breadcrumb-separator {
+    padding: 7px;
+    color: #343a40;
+    font-size: .7rem;
+}
+
+.breadcrumb {
+    font-size: .8rem
+}
+
+    .breadcrumb a {
+        color: #0fa0d0;
+    }
+/* Breadcrumb END */
+
+/* TEMPLATES CATALOG */
+#templatesCatalog .collapse {
+    padding-top: 1rem;
+    padding-left: 1.25rem;
+    padding-right: .25rem;
+}
+
+    #templatesCatalog .collapse .col-sm-6 {
+        padding-bottom: 1rem;
+        font-size: .9rem;
+        padding-left: 0;
+        padding-right: 1rem;
+    }
+
+#templatesCatalog .card {
+    margin-bottom: 0px;
+}
+
+#templatesCatalog .card-info .card-header {
+    background-color: #00AEDC;
+    border-top-left-radius: 0.25rem !important;
+    border-top-right-radius: 0.25rem !important;
+    padding-top: .5rem !important;
+    padding-bottom: .5rem !important;
+}
+
+#templatesCatalog .card .card-header {
+    padding-right: .5rem;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+}
+
+    #templatesCatalog .card .card-header:first-child {
+        padding-left: .5rem;
+    }
+
+#templatesCatalog .fade {
+    transition: opacity 0s linear;
+}
+
+#templatesCatalog .btn-link {
+    color: #343a40;
+}
+
+    #templatesCatalog .btn-link:hover {
+        color: #0fa0d0;
+    }
+
+#templatesCatalog .card-body {
+    padding: .5rem;
+}
+
+#templatesCatalog button i {
+    padding-top: .25rem;
+}
+/* TEMPLATES CATALOG END */
+
+.catalog-title {
+    padding-bottom: 15px;
+}
+
+/*custom badges END*/
+table.dataTable tr td {
+    vertical-align: middle !important;
+}
+
+table.dataTable.alignTop tr td {
+    vertical-align: top !important;
+}
+
+.datatableSwapViewBtn {
+    margin-top: 1px;
+}
+
+table {
+    width: 100% !important;
+}
+
+.mb-2, .my-2 {
+    margin-bottom: 0rem !important;
+}
+
+.card-header {
+    height: auto !important;
+  /*  white-space: nowrap !important;*/
+}
+
+    .card-header h3 {
+        font-size: .9rem !important;
+        margin-top: -2px;
+    }
+
+.card-body {
+    padding: 15px;
+}
+/**/
+
+/*DataTable*/
+.dataTable label {
+    margin: 0 !important;
+    padding-right: .2em !important;
+    padding-top: .2em;
+}
+
+.dataTable select {
+    font-size: .9rem !important;
+}
+
+.page-link {
+    color: #00AEDC;
+}
+
+.page-item.active .page-link {
+    background-color: #00AEDC;
+    border-color: #00AEDC;
+}
+
+.table-sm th {
+    padding-top: .45rem;
+    padding-bottom: .45rem;
+}
+/*DataTable END*/
+
+/* Left Navbar */
+.brand-text {
+    color: #c2c7d0;
+    font-size: 19px;
+}
+
+.brand-link .brand-image {
+    box-shadow: none !important;
+    opacity: unset !important;
+}
+
+.user-panel {
+    margin-top: .45rem !important;
+    padding-bottom: .45rem !important;
+    margin-bottom: 0rem !important;
+    padding-left: 5px;
+}
+
+    .user-panel .image {
+        font-size: 1.3rem;
+        cursor: pointer;
+        color: #ebecec;
+    }
+
+        .user-panel .image .fa-user {
+            padding-top: .7rem;
+        }
+
+/* Left Navbar END */
+
+/* Home panel */
+.homePanel .card {
+    border-radius: 0;
+    margin-bottom: .2rem !important;
+}
+
+.homePanel .card-body {
+    padding: 0;
+}
+
+.homePanel span {
+    background-color: #00AEDC !important ;
+    padding: 1.3rem;
+    font-size: medium;
+    margin-right: 0px !important;
+}
+
+.homePanel i {
+    width: 18px;
+}
+
+.homePanel a {
+    padding: 0;
+    width: 100%;
+}
+
+.homePanel p {
+    margin-bottom: 0px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-self: center;
+}
+/* Home panel END*/
+
+/*BUTTONS START*/
+.btnMarginBottom {
+    margin-bottom: 1rem !important;
+}
+/*BUTTONS END*/
+
+/*DATATABLES CARD VIEW*/
+.cardsview tbody tr {
+    float: left;
+    width: 19rem;
+    margin: 7px;
+    border: 0.0625rem solid rgba(0, 0, 0, .125);
+    position: relative;
+    height: 218px;
+    box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2);
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border-radius: 5px;
+    display: flex;
+}
+
+.cardsview tbody td {
+    display: block;
+}
+
+.cardsview thead {
+    display: none;
+}
+
+.cardsview tbody {
+    align-content: center !important;
+    align-items: center !important;
+}
+
+.cardsview td:before {
+    content: attr(data-label);
+    position: relative;
+    float: left;
+    color: #808080;
+    min-width: 4rem;
+    margin-left: 0;
+    margin-right: 1rem;
+    text-align: left;
+}
+
+tr.selected td:before {
+    color: #CCC;
+}
+
+table.cardsview tr td {
+    border: 0px !important;
+    font-size: .875rem;
+}
+
+table .badge {
+    color: white;
+}
+.bedge {
+    color: white;
+}
+
+td p {
+    border: 0pt solid !important;
+    border-radius: 6px !important;
+    color: white !important;
+    padding: 2px !important;
+    margin-left: 2px;
+    margin-top: 2px;
+    box-shadow: rgba(0,0,0,0.4) 10px 0px 10px 0px;
+}
+
+.cardsview .cardHeaderLeft {
+    position: absolute;
+    color: white;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 10px !important;
+    font-weight: 500;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px !important;
+}
+
+.cardsview .cardHeaderRight {
+    position: absolute;
+    text-align: right;
+    color: white;
+    top: 0px;
+    right: 0px;
+    padding: 10px !important;
+    font-weight: 500;
+    height: 1.3rem;
+    width: 79%;
+    border-top-right-radius: 5px !important;
+    z-index: 100;
+}
+
+.cardsview .cardBody1 {
+    position: absolute;
+    top: 43px;
+    left: 0px;
+    padding: 10px 5px 5px 10px !important;
+    width: 94.5%;
+}
+
+.cardsview .cardBody2 {
+    position: absolute;
+    top: 71px;
+    left: 0px;
+    width: 40% !important;
+    padding: 10px 5px 5px 8px !important;
+}
+
+.cardsview .cardBody3 {
+    position: absolute;
+    top: 95px;
+    left: 0px;
+    width: 94.5%;
+    padding: 2px 8px 8px 10px !important;
+}
+
+.cardsview .cardBody4 {
+    position: absolute;
+    top: 120px;
+    left: 0px;
+    width: 94.5%;
+    padding: 2px 5px 8px 10px !important;
+}
+
+.cardsview .cardBody5 {
+    position: absolute;
+    top: 145px;
+    left: 0px;
+    width: 53.5%;
+    padding: 2px 5px 8px 10px !important;
+}
+
+.cardsview .cardBody5Right {
+    position: absolute;
+    text-align: right;
+    top: 145px;
+    right: 0px;
+    width: 40%;
+    padding: 2px 5px 8px 10px !important;
+    font-size: 10pt !important;
+
+}
+
+.cardsview .cardFooterLeft {
+    bottom: 0px !important;
+    text-align: left;
+    position: absolute;
+    width: auto;
+    left: 0px;
+    right: 0px;
+    border-top: 1px solid #d6d7d9 !important;
+}
+
+.cardsview .cardFooterRight {
+    text-align: right;
+    right: 0px;
+    bottom: 0px !important;
+    position: absolute;
+    width: auto;
+    padding: 6px 10px 10px 10px !important;
+}
+
+.cardsview .cardBody1, .cardsview .cardBody3, .cardsview .cardBody4, .cardsview .cardBody5 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cardsview .cardsHide {
+    display: none;
+}
+
+.cardsview .dataTables_empty {
+    width: 100%;
+}
+
+.tableview .cardHeaderLeft {
+    background: transparent !important;
+}
+
+.tableview .cardHeaderRight {
+    background: transparent !important;
+}
+
+table .tableHide {
+    display: none;
+}
+
+/*MULTISELECT CUSTOM*/
+.multiselect-native-select .btn-group {
+    width: 100% !important;
+}
+.multiselect-native-select .btn-group .multiselect {
+    width: 100%;
+    display: inline-flex;
+}
+.multiselect-selected-text {
+    overflow: hidden;
+    margin: 0 auto;
+}
+.multiselect-container {
+    padding: 0px !important;
+    z-index: 1035;
+    overflow-x:auto !important;
+}
+.multiselectInput {
+    display: none !important;
+}
+.multiselectContainerLeft .multiselect-container {
+    right: 0px !important;
+    left: auto !important;
+    transform: inherit !important;
+    top: 38px!important;
+}
+
+/*STATUS COLORS*/
+/*.algo-red, .cardsview .dt-algo-red {
+    background: #dc3545;
+}
+
+.algo-blue, .cardsview .dt-algo-blue {
+    background: #3c8dbc;
+}
+
+.algo-dark-blue, .cardsview .dt-algo-dark-blue {
+    background: #007bff;
+}
+
+.algo-green, .cardsview .dt-algo-green {
+    background: #28a745;
+}
+
+.algo-yellow, .cardsview .dt-algo-yellow {
+    background: #ffc107;
+}
+
+.algo-orange, .cardsview .dt-algo-orange {
+    background: #fd7e14;
+}
+
+.algo-gray, .cardsview .dt-algo-gray {
+    background: #989898;
+}
+
+.algo-soft-blue, .cardsview .dt-algo-soft-blue {
+    background: #17a2b8;
+}*/
+/*CASE WORKFLOW MODAL*/
+#viewCaseHistoryModal .modal-body {
+    padding: 0px;
+}
+
+#viewCaseHistoryModal th {
+    border-top: 0px !important;
+}
+/*END*/
+
+#caseLocation {
+    text-decoration: underline !important;
+    font-weight: 700;
+}
+
+.toast {
+    /* background-color: #ffc107 !important;*/
+    opacity: 1 !important;
+}
+
+#blackListWarning {
+    display: none;
+}
+
+#accountB2bAlert {
+    display: none;
+}
+
+.alert {
+    padding: 7px !important;
+}
+
+.detailsTable tr {
+    border: 0px;
+}
+
+.detailsTable tr {
+    background: #e4edff !important;
+}
+
+.detailsTable tr th {
+    border: 0px;
+}
+
+.detailsTable tr td {
+    border-top: 0px;
+}
+
+.dataTable .shown {
+    background: #B0BED9 !important;
+}
+
+/* DataTables Checkboxes */
+.dt-checkboxes-select-all {
+    padding-right: 5px !important;
+}
+
+.dt-checkboxes-select tr {
+    /*  height: 38px; */
+}
+
+.dataTables_length {
+    float: left;
+}
+
+.btnEditDetails {
+    cursor: pointer;
+}
+
+.requiredInput {
+    color: red;
+}
+
+/* Modal loader */
+.modalLoader {
+    display: none;
+    position: absolute;
+    width: 60px;
+    left: 10px;
+    bottom: 0px;
+}
+
+    .modalLoader img {
+        width: 60px;
+    }
+/*OZ Viewer*/
+#OZViewer {
+    min-height: 100% !important;
+    width: 100% !important;
+    border: none !important;
+    height: 1200px;
+}
+
+.oz_ui_layout {
+    box-sizing: content-box !important;
+}
+
+#pageTitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.cultureImg {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-top: -3px;
+    margin-bottom: -2px;
+}
+
+.cultureText {
+    margin-left: 4px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+/* Users view */
+#insertUserRoleModal .modal-body {
+    max-height: 400px;
+    overflow: auto;
+}
+
+.alignSwitch {
+    padding-left: 60px;
+}
+
+.detailsTable .btnRow {
+    background-color: #d4e0f7 !important;
+}
+/* Users view END */
+
+/* Roles view */
+#insertPermissionRoleModal .modal-body {
+    max-height: 400px;
+    overflow: auto;
+}
+/* Roles view END*/
+.pointer {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.noPadding {
+    padding: 0px !important;
+}
+
+table thead th, .customFontWeight {
+    font-weight: 600 !important;
+}
+
+/* For btn on datatable view */
+.btn-badge {
+    display: inline-block !important;
+    padding: 0.25em 0.4em !important;
+    font-size: 75% !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    vertical-align: baseline !important;
+    border-radius: 0.25rem !important;
+}
+
+.removeOrderIcon:after, .removeOrderIcon:before {
+    content: none !important;
+}
+
+/* Apply on all input fields */
+input {
+    outline: none;
+    box-shadow: none !important;
+}
+
+/* Override admin lte for labels */
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: 400 !important;
+}
+
+.input-group-text {
+    font-size: 0.875rem !important;
+}
+
+.heightAuto {
+    height: auto !important;
+}
+
+/* remove caret from dropdown */
+.caret-off::before {
+    display: none !important;
+}
+
+.caret-off::after {
+    display: none !important;
+}
+
+.textRed {
+    color: red !important;
+}
+
+.btnDetailsPressed {
+    background: #e9ecef;
+}
+
+.signFailed {
+    border-left: 3px solid #d9534f !important;
+}
+
+.cardsview .signFailedShadow {
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(217,83,79,1) !important;
+    -moz-box-shadow: 0px 0px 5px 2px rgba(217,83,79,1) !important;
+    box-shadow: 0px 0px 5px 2px rgba(217,83,79,1) !important;
+}
+
+/* The max width is dependant on the container (more info below) */
+.btnDocumentErrors {
+    white-space: nowrap;
+}
+
+.popoverMaxWidth {
+    max-width: 100%;
+}
+
+#mediaPlayer {
+    width: 100%;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+/* Truncate long text */
+#signErrorDocumentsDataTable .truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+#signErrorDocumentsDataTable .truncated {
+    overflow: visible;
+    white-space: initial;
+}
+
+/* Custom button for datatable toolbar*/
+.customButton {
+    float: left !important;
+    margin-left: 7px !important;
+}
+
+.customButtonGrouped {
+    float: left !important;
+    margin-left: 7px !important;
+}
+
+.customButtonIcon {
+    padding: 6px !important;
+}
+
+.displayNone {
+    display: none !important;
+}
+
+/* PDF Canvas */
+#pdfViewer {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#signatureCanvas {
+    border: 2px dashed #a0a6ab;
+    border-radius: 0.3rem;
+    /*height: 150px !important;*/
+}
+
+#signModal .modal-body { /* for IE */
+    height: 100%;
+}
+/* PDF Canvas END */
+.btn-primary {
+    /*background-color: #0f9fcf !important;
+    border-color: #0f9fcf !important;*/
+}
+
+.btn-secondary {
+    /*background-color: #5f6062 !important;
+    border-color: #5f6062 !important;*/
+}
+
+.active {
+}
+
+/* Loader */
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    background: rgba(0, 0, 0, 0.3) url("../img/spinner.gif") center no-repeat;
+}
+
+body.loading { /* Turn off scrollbar when body element has the loading class */
+    overflow: hidden;
+}
+
+    body.loading .overlay { /* Make spinner image visible when body element has the loading class */
+        display: block;
+    }
+/* Loader END */
+
+.customDropdown { /* DataTable Show/Hide column */
+    float: left !important;
+    margin-left: 7px !important;
+}
+
+.exportButton { /* DataTable export button */
+    width: 36px;
+    height: 32px;
+}
+
+.saveSearchButton { /* DataTable save search button */
+    height: 32px;
+}
+
+@media (min-width: 576px) { /* modal xl width on small screens */
+    .modal-xl {
+        max-width: 1140px;
+        width: 90%;
+    }
+}
+
+.sumBold { /* DataTable footer summary */
+    font-weight: 600 !important;
+}
+
+.btnDetailsProtocol {
+    width: 30px;
+}
+
+.inlineButtons {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+/* Multiselect scroll on mobile devices */
+button.dropdown-item {
+    pointer-events: none;
+}
+span.form-check input, span.form-check label {
+    pointer-events: all;
+}
+/* Multiselect scroll on mobile devices END */
+
+.form-control[readonly]{
+    background: #ffffff;
+}
+
+/* Login page END */
+#loginImage{
+    height: 35px;
+}
+
+.login-logo {
+    font-size: 20px !important;
+}
+
+.login-page .card-header{
+    height: auto !important;
+}
+
+.login-page .toast {
+    opacity: 1 !important;
+}
+
+.login-page .alert-danger {
+    color: #721c24 !important;
+    background-color: #f8d7da !important;
+    border-color: #f5c6cb !important;
+}
+/* Login page END */
+
+#protocolItemStatus { /* Change protocolItem status modal */
+    height: fit-content;
+    margin-top: 10px;
+}
+
+/* Dashboard card box */
+.cardBoxColorPrimary {
+    background-color: #00AEDC;
+    color: #ffffff;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 27px;
+    height: 15px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 12px;
+        width: 12px;
+        top: 1px;
+        left: 1px;
+        background-color: #edf0f2;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(12.5px);
+    -ms-transform: translateX(12.5px);
+    transform: translateX(12.5px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.btn-primary {
+    background-color: #00AEDC !important
+}
+
+.btn-primary {
+    border-color: #00AEDC !important
+}
+
+.navbar-corporate-color {
+    background-color: #00AEDC !important
+}
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+    background-color: #00AEDC !important
+}
+#searchTemplates:hover {
+    background-color: #4682B4 !important;
+    border-color: #4682B4 !important;
+}
+.greyReadonly {
+    background-color: #f0f1f2 !important;
+}
+.tox-notifications-container {
+    display: none !important;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8); /* Optional: semi-transparent background */
+    z-index: 9999; /* Ensure it is on top of other elements */
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+#signatureImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.otp-box {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    margin: 0.2rem;
+}
+
+#otp-input {
+    margin-top: 1rem;
+}
+
+.validationMsg {
+    display: block;
+    margin-top: 1rem;
+}
+.otp-box::selection {
+    background: transparent;
+    color: inherit; 
+}
+
+.otp-box::-moz-selection {
+    background: transparent;
+}
+.otp-box:focus {
+    outline: none;
+    caret-color: transparent;
+}
+.otp-box {
+    user-select: none;
+    caret-color: transparent;
+}
+
+.language-selector {
+    position: absolute;
+    bottom: 30px;
+    right: 15px;
+    z-index: 999;
+    width: 150px;
+}
+
+.navbar-nav-right{
+    position: fixed;
+    right: 10px !important;
+    width: 150px;
+    display: flex;
+}
+.dropdown-menu-right {
+    position: fixed;
+    right: 0px !important;
+    width: 150px;
+    text-align: left;
+    align-items: center;
+}
+.brand-text-font {
+    text-align: center;
+    align-items: center;
+}
+
+.loading-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #515B3A;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+.loading-indicator p {
+    color: #666;
+    margin: 0;
+    font-size: 14px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#appointmentItemsTable_info {
+    display: none !important;
+}

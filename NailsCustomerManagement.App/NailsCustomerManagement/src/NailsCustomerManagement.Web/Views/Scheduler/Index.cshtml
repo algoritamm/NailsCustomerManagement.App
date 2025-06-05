@@ -1,0 +1,89 @@
+﻿@model NailsCustomerManagement.Application.ViewModels.AppointmentVM.AppointmentSchedulerVM
+@{
+    ViewData["Title"] = ViewData["Title"] ?? SharedLocalizer["Scheduler"].Value;
+    ViewData["BreadcrumbHTML"] = ViewData["BreadcrumbHTML"] ?? " / " + SharedLocalizer["Scheduler"].Value;
+}
+<div class="row row-cards row-deck">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-status bg-blue"></div>
+            <div class="card-header">
+                <h3 class="card-title">
+                    <b>@SharedLocalizer["Scheduler"]</b> | <span id="dayOfWeek">@Model.AppointmentDate.ToString("dddd", new System.Globalization.CultureInfo("sr-Latn-RS"))</span>
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <button id="btnPrevDay" class="btn btn-secondary">
+                        ← @SharedLocalizer["Previous"]
+                    </button>
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <div class="input-group date datepickers" id="datePicker" data-target-input="nearest">
+                                <input id="inputDate" type="text" data-target="#datePicker" class="form-control datetimepicker datetimepicker-input cursorPointer" value="@Model.AppointmentDate.ToString("yyyy-MM-dd")" data-toggle="datetimepicker" />
+                                <div class="input-group-append" data-target="#datePicker" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btnNextDay" class="btn btn-secondary">
+                        @SharedLocalizer["Next"] →
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped text-center">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th style="width: 100px;">@SharedLocalizer["Time"]</th>
+                                <th>@SharedLocalizer["Appointments"]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int hour = 0; hour < 24; hour++)
+                            {
+                                var time = hour.ToString("D2") + ":00";
+                                var appointmentsAtHour = Model.Appointments
+                                .Where(a => a.AppointmentItemTime.ToString().StartsWith(hour.ToString("D2")))
+                                .ToList();
+
+                                var isPast = Model.AppointmentDate.Date.AddHours(hour) < DateTime.Now;
+                                var bgColor = isPast ? "background-color:#f0f0f0;" : "background-color:white;";
+
+                                <tr style="@bgColor">
+                                    <td><b>@time</b></td>
+                                    <td>
+                                        @if (appointmentsAtHour.Any())
+                                        {
+                                            foreach (var appointment in appointmentsAtHour)
+                                            {
+                                                <div class="p-2 mb-1 text-white" style="background-color:@appointment.AppointmentStatusColor; border-radius:6px;">
+                                                    <b>@appointment.AppointmentTitle</b><br />
+                                                    @appointment.CustomerFullName <br />
+                                                    @appointment.ServiceName <br />
+                                                    <small>@appointment.AppointmentStatus</small>
+                                                </div>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <div class="text-muted">-</div>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/scheduler/index.js"> </script>
+    <script>
+        app.scheduler.index.init({});
+    </script>
+}
+

@@ -1,0 +1,75 @@
+﻿@model NailsCustomerManagement.Application.ViewModels.AppointmentVM.AppointmentIndexVM
+@{
+    ViewData["Title"] = ViewData["Title"] ?? SharedLocalizer["Appointments"].Value;
+    ViewData["BreadcrumbHTML"] = ViewData["BreadcrumbHTML"] ?? " / " + SharedLocalizer["Appointments"].Value;
+}
+<div class="row row-cards row-deck">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-status bg-blue"></div>
+            <div class="card-header">
+                <h3 class="card-title"><b>@SharedLocalizer["Appointment customers"]</b></h3>
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="form-group col-md-3 multiselectContainerRight">
+                        <label for="statusFilter">@SharedLocalizer["Appointment status:"].Value</label>
+                        <select id="statusFilter" class="form-control multiselect" multiple="multiple">
+                            @foreach (var status in Model.FilterStatuses)
+                            {
+                                <option value="@status.StatusId" selected="selected">@status.StatusName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6 col-xl-3">
+                        <div class="btn-group" role="group">
+                            <button id="btnFilterApply" class="btn btn-primary btn-md-custom">@SharedLocalizer["Filter"]</button>
+                            <button id="btnFilterDismiss" class="btn btn-default btn-md-custom">@SharedLocalizer["Dismiss"]</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="loading-indicator" class="loading-indicator" style="display:none;">
+                    <div class="loading-spinner"></div>
+                </div>
+                <div class="table-responsive">
+                    <!-- Cards Container -->
+                    <table class="table cardsview table-hover table-striped table-sm dataTable" id="appointmentsTable">
+                        <tbody>
+                            @foreach (var appointment in Model.Appointments)
+                            {
+                                <tr data-status-id="@appointment.Status?.StatusId" data-appointment-id="@appointment.AppointmentId">
+                                    <td class="cardsHide">
+                                        <input type="hidden" name="AppointmentId" value="@appointment.AppointmentId" />
+                                        <input type="hidden" name="CustomerId" value="@appointment.CustomerId" />
+                                    </td>
+                                    <td class="cardHeaderLeft" style="background-color:@appointment.Status?.StatusClass">
+                                        <strong>@appointment.CustomerFullName</strong>
+                                    </td>
+                                    <td class="cardBody1">
+                                        <span>@appointment.AppointmentName</span>
+                                    </td>
+                                    <td class="cardBody2">
+                                        <p class="bedge" style="background:@appointment.Status?.StatusClass">@appointment.Status?.StatusName</p>
+                                    </td>
+                                    <td class="cardFooterRight">
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-default" title="@SharedLocalizer["Open"]" href="/Appointment/ViewAppointment?appointmentId=@appointment.AppointmentId"><i class="far fa-folder-open"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/appointment/index.js"> </script>
+    <script>
+        app.appointment.index.init({});
+    </script>
+}
+

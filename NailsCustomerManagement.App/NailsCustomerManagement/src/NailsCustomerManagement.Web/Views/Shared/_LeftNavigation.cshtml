@@ -1,0 +1,54 @@
+﻿
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <div class="brand-text-font">
+        <span class="brand-text font-weight-light">@SharedLocalizer["Nails customer management"]</span>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <i class="far fa-user"></i>
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">@SharedLocalizer["Appointment schedules"]</a>
+                <a href="#" class="d-block collapsible collapsed" character-expander-size="20">@DateTime.Now.Day.@DateTime.Now.Month.@DateTime.Now.Year.</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-compact" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index" asp-active-controllers="Home" asp-active-actions="Index">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>@SharedLocalizer["Home page"]</p>
+                    </a>
+                </li>
+                @if (User.HasPermission(Permissions.Appointment.View))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Appointment" asp-action="Index" asp-active-controllers="Appointment" asp-active-actions="Index">
+                            <i class="nav-icon fas fa-folder"></i>
+                            <p>@SharedLocalizer["Appointments"]</p>
+                        </a>
+                    </li>
+                }
+                @if (User.HasPermission(Permissions.Scheduler.View))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Scheduler" asp-action="Index" asp-active-controllers="Scheduler" asp-active-actions="Index">
+                            <i class="nav-icon fas fa-folder"></i>
+                            <p>@SharedLocalizer["Scheduler"]</p>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

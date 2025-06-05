@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = SharedLocalizer["Error"];
+    Layout = "";
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewBag.ErrorCode</title>
+    <link rel="icon" href="~/images/icon-users-2.jpg">
+    <link href="~/lib/adminLte3/css/adminlte.css" rel="stylesheet">
+    <!--Css-->
+    <link href="~/css/error/errorPage.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="page">
+        <div class="page-content">
+            <h1 class="errorStatusCode @ViewBag.ErrorCodeColor">@ViewBag.ErrorCode</h1>
+            <h3 class="errorTitle">@ViewBag.ErrorTitle</h3>
+            <h5 class="errorDetails">@Html.Raw(ViewBag.ErrorDetails)</h5>
+        </div>
+    </div>
+</body>
+</html>

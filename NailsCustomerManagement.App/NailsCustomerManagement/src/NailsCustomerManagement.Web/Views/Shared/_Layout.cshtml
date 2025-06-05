@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery antiforgery
+    <meta name="csrf-token" content="@antiforgery.GetAndStoreTokens(Context).RequestToken" />
+    @RenderSection("Metatags", required: false)
+    <title> @SharedLocalizer["Nails Salon"] | @ViewData["Title"]</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <!--Font Awesome-->
+    <link href="~/lib/fontawesome-free-5.11.2-web/css/all.min.css" rel="stylesheet" />
+    <link href="~/lib/fontawesome-free-6.3.0-web/css/all.min.css" rel="stylesheet" />
+
+    <!--Bootstrap4-->
+    <link href="~/lib/bootstrap-4.3.1/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-4.3.1/dist/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-4.3.1/dist/css/bootstrap-reboot.css" rel="stylesheet" />
+
+
+    <link href="~/lib/bootstrap-multiselect/bootstrap-multiselect.css" rel="stylesheet" />
+
+    <!-- Ionicons -->
+    <link href="~/lib/ionicons-2.0.1/ionicons.min.css" rel="stylesheet" />
+
+    <!-- Datatables -->
+    <link href="~/lib/datatables-1.10.19/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-4.3.1/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="~/lib/datatables-1.10.19/select.dataTables.min.css" type="text/css" rel="stylesheet" />
+    <link href="~/lib/datatableSearchIcon/datatableSearchIcon.css" rel="stylesheet" />
+
+    <!-- DataTables Checkboxes -->
+    <link href="~/lib/datatables-1.10.19/dataTables.checkboxes.css" rel="stylesheet" />
+
+    <!--Select2-->
+    <link href="~/lib/select2-4.0.11/css/select2.min.css" rel="stylesheet" />
+
+    <!-- Theme style -->
+    <link href="~/lib/adminLte3/css/adminlte.css" rel="stylesheet">
+
+    <link href="~/lib/jquery-ui-1.12.1/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/lib/jquery-dynatree-1.2.8/ui.dynatree.css" rel="stylesheet" />
+
+    <!--Bootstrap datetimepicker-->
+    <link rel="stylesheet" href="~/lib/tempus-dominus/tempusdominus-bootstrap-4.min.css">
+
+    <!-- Bootstrap stepper -->
+    <link href="~/lib/bs-stepper/bs-stepper.min.css" rel="stylesheet" />
+
+    <link href="~/css/shared.css" rel="stylesheet" />
+
+    @RenderSection("Styles", required: false)
+</head>
+<body class="hold-transition sidebar-mini layout-fixed text-sm" id="body">
+
+    <div class="overlay"></div>
+
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        <partial name="_HeaderNavbar" />
+        <partial name="_LeftNavigation" />
+        <div class="content-wrapper">
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-12">
+                            <ol class="breadcrumb float-sm-left">
+                                <li class="breadcrumb-item"><a href="/Home/Index">@SharedLocalizer["Home page"]</a></li>
+                                @Html.Raw(@ViewData["BreadcrumbHTML"])
+                            </ol>
+                        </div>
+                        <div class="col-sm-6">
+                            <div id="pageTitle">@Html.Raw(@ViewData["Page title"])</div>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-12">
+
+                        @RenderBody()
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- /.content-wrapper -->
+        <partial name="_Footer" />
+    </div>
+    <script src="~/lib/jquery-3.5.1/dist/jquery.min.js"></script>
+  
+    <!-- jQuery UI -->
+    <script src="~/lib/jquery-ui-1.12.1/js/jquery-ui.min.js"></script>
+    <script src="~/lib/jquery-dynatree-1.2.8/jquery.dynatree.js"></script>
+    
+  
+
+    <!-- Added duplicate jquery-ui for autocomplete search -->
+    <script src="~/lib/jquery-ui-1.12.1/js/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap 4.3.1 -->
+    <script src="~/lib/bootstrap-4.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Moment -->
+    <script src="~/lib/moment/moment.min.js"></script>
+
+    <!-- AdminLTE App -->
+    <script src="~/lib/adminLte3/js/adminlte.js"></script>
+
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/lib/adminLte3/js/demo.js"></script>
+
+    <!-- Jquery inputmask 4.0.8 -->
+    <script src="~/lib/inputmask-4.0.8/jquery.inputmask.bundle.js"></script>
+
+    <!--jquery validation-->
+    <script src="~/lib/jquery-validation-1.17.0/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive-3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+    <!--By default validator ignores hidden fields. Change the setting here to ignore nothing-->
+    <script>$.validator.setDefaults({ ignore: null });</script>
+    <!--Select2 4.0.11 -->
+    <script src="~/lib/select2-4.0.11/js/select2.full.min.js"></script>
+    <script src="~/lib/select2-4.0.11/js/i18n/sr.js"></script>
+
+
+    <!--Datatable 1.10.19-->
+    <script src="~/lib/datatables-1.10.19/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables-1.10.19/dataTables.bootstrap4.min.js"></script>
+    <script src="~/lib/datatables-1.10.19/dataTables.responsive.min.js"></script>
+    <script src="~/lib/datatables-1.10.19/dataTables.select.min.js"></script>
+    <script src="~/lib/datatableSearchIcon/datatableSearchIcon.js"></script>
+
+    <!--Datatable export-->
+    <script src="~/lib/datatables-1.10.19/dataTables.buttons.min.js"></script>
+    <script src="~/lib/datatables-1.10.19/buttons.flash.min.js"></script>
+    <script src="~/lib/datatables-1.10.19/jszip.min.js"></script>
+    <script src="~/lib/datatables-1.10.19/vfs_fonts.js"></script>
+    <script src="~/lib/datatables-1.10.19/buttons.html5.min.js"></script>
+
+    <!--Bootstrap datetimepicker-->
+     <script src="~/lib/tempus-dominus/tempusdominus-bootstrap-4.min.js"></script> 
+
+    <!--Bootstrap-multiselect-->
+    <script src="~/lib/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+
+    <!-- Bootstrap stepper -->
+    <script src="~/lib/bs-stepper/bs-stepper.min.js"></script>
+
+    <!-- DataTables Checkboxes -->
+    <script src="~/lib/datatables-1.10.19/dataTables.checkboxes.js"></script>
+
+    <!-- SignalR -->
+    <script src="~/lib/signalr/signalr.min.js"></script>
+
+    <!-- Set modal input -->
+    <script src="~/lib/setmodalinputs/setmodalinputs.js"></script>
+
+    <!-- Show/hide elements -->
+    <script src="~/lib/selectshowhide/selectshowhide.js"></script>
+
+    <!-- Resize sensor -->
+    <script src="~/lib/resize-sensor/ResizeSensor.js"></script>
+    <script src="~/lib/resize-sensor/ElementQueries.js"></script>
+
+    <!-- app.js -->
+    <script src="~/js/app.js"></script>
+    <script>
+        app.init({
+            sharedLocalizer: {
+                noDataToShow: "@SharedLocalizer["No data to show"]",
+                dataTable: {
+                    paginate: {
+                        previous: "@SharedLocalizer["Previous"]",
+                        next: "@SharedLocalizer["Next"]",
+                    },
+                    search: "@SharedLocalizer["_INPUT_"]",
+                    searchPlaceholder: "@SharedLocalizer["Search..."]",
+                    loadingRecords: "@SharedLocalizer["Please wait..."]",
+                    info: "@SharedLocalizer["Showing _START_ to _END_ of _TOTAL_ entries"]",
+                    infoFiltered: "@SharedLocalizer["(filtered from _MAX_ total entries)"]",
+                    lengthMenu: "@SharedLocalizer["Show _MENU_ entries"]",
+                    emptyTable: "@SharedLocalizer["No data available in table"]",
+                    infoEmpty: "@SharedLocalizer["Showing 0 to 0 of 0 entries"]",
+                    zeroRecords: "@SharedLocalizer["No matching records found"]",
+                    exportToExcel: "@SharedLocalizer["Export to excel"]",
+                }
+            }
+        });
+    </script>
+
+    @RenderSection("Scripts", required: false)
+    @await Component.InvokeAsync("NToastNotify")
+
+</body>
+</html>

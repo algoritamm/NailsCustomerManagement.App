@@ -1,0 +1,117 @@
+﻿@model NailsCustomerManagement.Application.ViewModels.AppointmentItemVM.AppointmentItemIndexVM
+@{
+    ViewData["Title"] = ViewData["Title"] ?? SharedLocalizer["Appointment Items"].Value;
+    ViewData["BreadcrumbHTML"] = ViewData["BreadcrumbHTML"] ??
+                                    @$"/<a href='/Appointment/Index'>{SharedLocalizer["Appointments"].Value}</a>/{SharedLocalizer["Appointment Items"].Value}";
+
+}
+
+<div class="row row-cards row-deck">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-status bg-blue"></div>
+            <div class="card-header">
+                <h3 class="card-title"><b>@SharedLocalizer["Appointment items"].Value</b> | @Model.CustomerFullName</h3>
+            </div>
+            <div class="card-body">
+                <input type="hidden" asp-for="@Model.AppointmentId" />
+                <div>
+                    <div class="form-group col-md-3 multiselectContainerRight">
+                        <label for="statusFilter">@SharedLocalizer["Appointment item status:"].Value</label>
+                        <select id="statusFilter" class="form-control multiselect" multiple="multiple">
+                            @foreach (var status in Model.FilterStatuses)
+                            {
+                                <option value="@status.StatusId" selected="selected">@status.StatusName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <div class="btn-group" role="group">
+                            <button id="btnFilterApply" class="btn btn-primary btn-md-custom">@SharedLocalizer["Filter"]</button>
+                            <button id="btnFilterDismiss" class="btn btn-default btn-md-custom">@SharedLocalizer["Dismiss"]</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-4 customButton">
+                        <input type="button" value="@SharedLocalizer["Insert"]" title="@SharedLocalizer["Insert appointment"]" class=" btn btn-primary btnInsertAppointment btnMarginBottom" />
+                    </div>
+                </div>
+                <div id="loading-indicator" class="loading-indicator" style="display:none;">
+                    <div class="loading-spinner"></div>
+                </div>
+                <div class="table-responsive">
+                    <table id="appointmentItemsTable" class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>@SharedLocalizer["ID"]</th>
+                                <th>@SharedLocalizer["Appointment title"]</th>
+                                <th>@SharedLocalizer["Appointment date"]</th>
+                                <th>@SharedLocalizer["Appointment time"]</th>
+                                <th>@SharedLocalizer["Amount paid"]</th>
+                                <th>@SharedLocalizer["Status"]</th>
+                                <th>@SharedLocalizer["Payement type"]</th>
+                                <th>@SharedLocalizer["Service"]</th>
+                                <th>@SharedLocalizer["Service price"]</th>
+                                <th>@SharedLocalizer["Employee"]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.AppointmentItems)
+                            {
+                                <tr data-status-id="@item.AppointmentStatus?.StatusId">
+                                    <td>@item.AppointmentItemId</td>
+                                    <td>@item.AppointmentTitle</td>
+                                    <td>@item.AppointmentItemDate.Day.@item.AppointmentItemDate.Month.@item.AppointmentItemDate.Year.</td>
+                                    <td>@item.AppointmentItemTime.Hours.ToString():@item.AppointmentItemTime.Minutes.ToString()</td>
+                                    <td>@item.AmountPaid</td>
+                                    <td style="background-color: @item.AppointmentStatus?.StatusColor; color: white;">
+                                        @item.AppointmentStatus?.StatusName
+                                    </td>
+                                    <td>@item.PayementType</td>
+                                    <td>@item.ServiceName</td>
+                                    <td>@item.ServicePrice</td>
+                                    <td>@item.AccountFullName</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Insert appointment open modal-->
+<div id="insertAppointmentDiv"></div>
+
+@section Scripts {
+    <script src="~/lib/tinymce-5/tinymce.min.js"></script>
+    <script src="~/js/appointment/viewAppointment.js"> </script>
+    <script>
+        $(document).ready(function () {
+            $('#appointmentItemsTable').DataTable({
+                "order": [],
+                "language": {
+                    "url": "app.sharedLocalizer.dataTable",
+                    "lengthMenu": "_MENU_"
+                },
+                "columnDefs": [
+                    { "type": "datetime", "targets": [2, 3] }
+                ],
+
+            });
+
+            $('#statusFilter').multiselect({
+                includeSelectAllOption: true,
+                enableFiltering: true,
+                maxHeight: 200,
+                buttonWidth: '100%',
+                nonSelectedText: 'Select statuses'
+            });
+
+            app.appointment.viewAppointment.init({});
+        });
+    </script>
+}
