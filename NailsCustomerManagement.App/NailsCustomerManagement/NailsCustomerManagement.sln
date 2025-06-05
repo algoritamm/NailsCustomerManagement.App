@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E770B40E-670E-4C0D-B9A3-3E6FBD8343F3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NailsCustomerManagement.Web", "src\NailsCustomerManagement.Web\NailsCustomerManagement.Web.csproj", "{868CFCC9-1F28-4370-A613-66B48BBFBAC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NailsCustomerManagement.Application", "src\NailsCustomerManagement.Application\NailsCustomerManagement.Application.csproj", "{C7B8A76E-509A-4570-A361-13B577FEAC45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NailsCustomerManagement.Core", "src\NailsCustomerManagement.Core\NailsCustomerManagement.Core.csproj", "{2B8A1F6D-116C-412B-B5C9-F3723C298378}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NailsCustomerManagement.Infrastructure", "src\NailsCustomerManagement.Infrastructure\NailsCustomerManagement.Infrastructure.csproj", "{BFBF439F-5C4E-41FA-9690-584F4363D2B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NailsCustomerManagement.Helpers", "src\NailsCustomerManagement.Helpers\NailsCustomerManagement.Helpers.csproj", "{D7785AFF-2DD8-4491-9D19-98AA343CDD17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{868CFCC9-1F28-4370-A613-66B48BBFBAC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{868CFCC9-1F28-4370-A613-66B48BBFBAC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{868CFCC9-1F28-4370-A613-66B48BBFBAC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{868CFCC9-1F28-4370-A613-66B48BBFBAC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7B8A76E-509A-4570-A361-13B577FEAC45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7B8A76E-509A-4570-A361-13B577FEAC45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7B8A76E-509A-4570-A361-13B577FEAC45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7B8A76E-509A-4570-A361-13B577FEAC45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B8A1F6D-116C-412B-B5C9-F3723C298378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B8A1F6D-116C-412B-B5C9-F3723C298378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B8A1F6D-116C-412B-B5C9-F3723C298378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B8A1F6D-116C-412B-B5C9-F3723C298378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFBF439F-5C4E-41FA-9690-584F4363D2B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBF439F-5C4E-41FA-9690-584F4363D2B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBF439F-5C4E-41FA-9690-584F4363D2B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBF439F-5C4E-41FA-9690-584F4363D2B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7785AFF-2DD8-4491-9D19-98AA343CDD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7785AFF-2DD8-4491-9D19-98AA343CDD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7785AFF-2DD8-4491-9D19-98AA343CDD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7785AFF-2DD8-4491-9D19-98AA343CDD17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{868CFCC9-1F28-4370-A613-66B48BBFBAC8} = {E770B40E-670E-4C0D-B9A3-3E6FBD8343F3}
+		{C7B8A76E-509A-4570-A361-13B577FEAC45} = {E770B40E-670E-4C0D-B9A3-3E6FBD8343F3}
+		{2B8A1F6D-116C-412B-B5C9-F3723C298378} = {E770B40E-670E-4C0D-B9A3-3E6FBD8343F3}
+		{BFBF439F-5C4E-41FA-9690-584F4363D2B2} = {E770B40E-670E-4C0D-B9A3-3E6FBD8343F3}
+		{D7785AFF-2DD8-4491-9D19-98AA343CDD17} = {E770B40E-670E-4C0D-B9A3-3E6FBD8343F3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA0A81EB-88DB-4C6E-89B9-2C46EDB89260}
+	EndGlobalSection
+EndGlobal
