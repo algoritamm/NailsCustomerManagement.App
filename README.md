@@ -1,8 +1,9 @@
 # NailsCustomerManagement.App
 ASP.NET Web application
-## TO DO
-1. Insert/Update termina za postojeceg klijenta
-2. Insert novog klijenta uz insert termina
-3. Kad je uspesno zakazan termin slati SMS - analizirati!
 
-## za pokretanje otpakovati (unzip) folder lib u wwwroot
+## TO DO
+1. Treba srediti UI/UX
+2. Kad je uspesno zakazan termin slati SMS - prvo panalizirati!
+
+## Pokretanje
+za pokretanje otpakovati (unzip) folder lib u wwwroot
