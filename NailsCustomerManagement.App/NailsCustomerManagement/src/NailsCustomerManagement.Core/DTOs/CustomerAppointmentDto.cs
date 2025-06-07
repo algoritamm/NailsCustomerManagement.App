@@ -21,6 +21,7 @@ namespace NailsCustomerManagement.Core.DTOs
         public string AppointmentName { get; set; } = null!;
         public string CustomerFullName { get; set; } = null!;
         public AppointmentStatusDto Status { get; set; } = null!;
+        public int AccountId { get; set; }
     }
 
     public class AppointmentStatusDto

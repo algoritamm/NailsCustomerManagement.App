@@ -26,5 +26,10 @@ namespace NailsCustomerManagement.Infrastructure.Repositories
         {
             _context.SysSessionLogs.Update(sessionLog);
         }
+
+        public SysSessionLog? GetSessionLog(int id)
+        {
+            return _context.SysSessionLogs.Find(id);
+        }
     }
 }

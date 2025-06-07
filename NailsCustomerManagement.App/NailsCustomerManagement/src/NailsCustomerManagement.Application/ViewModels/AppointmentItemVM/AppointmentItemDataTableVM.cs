@@ -21,6 +21,9 @@ namespace NailsCustomerManagement.Application.ViewModels.AppointmentItemVM
         public int ServicePrice { get; set; }
         public string AccountFullName { get; set; }
         public AppointmentItemStatusVM AppointmentStatus {  get; set; }
+        public bool CanUpdateAppointmentItem { get; set; }
+        public int AccountId { get; set; }
+        public bool CanDeleteAppointmentItem { get; set; }
 
     }
 }

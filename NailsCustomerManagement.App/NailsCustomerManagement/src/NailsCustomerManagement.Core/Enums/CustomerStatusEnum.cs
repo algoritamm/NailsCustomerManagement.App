@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace NailsCustomerManagement.Core.Enums
 {
-    public enum AppointmentItemStatusEnum : byte
+    public enum CustomerStatusEnum : byte
     {
-        ActiveParent = 1,
-        InactiveParent = 2,
         Active = 3,
-        Inactive = 4,
+        Inactive = 4,   
     }
 }

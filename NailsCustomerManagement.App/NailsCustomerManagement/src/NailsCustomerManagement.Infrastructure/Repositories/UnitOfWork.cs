@@ -1,4 +1,5 @@
-﻿using NailsCustomerManagement.Core.Interfaces.Infrastructure;
+﻿using Microsoft.EntityFrameworkCore;
+using NailsCustomerManagement.Core.Interfaces.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NailsCustomerManagement.Infrastructure.Repositories
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly NailsCustomerManagementDbContext _context;
         public IAccountRepository AccountRepo { get; private set; }
@@ -18,6 +19,8 @@ namespace NailsCustomerManagement.Infrastructure.Repositories
         public IPayementTypeRepository PayementTypeRepo { get; private set; }   
         public IServiceTypeRepository ServiceTypeRepo { get; private set; }
 
+        public ICustomerRepository CustomerRepo { get; private set; }
+
         public UnitOfWork(NailsCustomerManagementDbContext context,
             IAccountRepository accountRepo,
             ILanguageCountryRepository languageCountryRepo,
@@ -25,7 +28,8 @@ namespace NailsCustomerManagement.Infrastructure.Repositories
             IPermissionRepository permissionRepo,
             IAppointmentRepository appointmentRepo,
             IPayementTypeRepository payementTypeRepo,
-            IServiceTypeRepository serviceTypeRepo)
+            IServiceTypeRepository serviceTypeRepo, 
+            ICustomerRepository customerRepository)
         {
             _context = context;
             AccountRepo = accountRepo;
@@ -34,7 +38,8 @@ namespace NailsCustomerManagement.Infrastructure.Repositories
             PermissionRepo = permissionRepo;
             AppointmentRepo = appointmentRepo;
             PayementTypeRepo = payementTypeRepo;
-            ServiceTypeRepo = serviceTypeRepo;    
+            ServiceTypeRepo = serviceTypeRepo;   
+            CustomerRepo = customerRepository;
         }
 
         public int Complete()
@@ -53,5 +58,7 @@ namespace NailsCustomerManagement.Infrastructure.Repositories
         {
             _context.Dispose();
         }
+
+        public DbContext Context => _context;
     }
 }

@@ -11,5 +11,6 @@ namespace NailsCustomerManagement.Application.Interfaces.Application
     {
         int InsertSessionLog(SysSessionLog session);
         int UpdateSessionLog(SysSessionLog session);
+        void UpdateSessionLogById(int sessionId);
     }
 }

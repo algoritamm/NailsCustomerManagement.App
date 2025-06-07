@@ -15,9 +15,11 @@ namespace NailsCustomerManagement.Application.ViewModels.AppointmentVM
     {
         public int AppointmentId { get; set; }
         public int CustomerId { get; set; }
-        public IEnumerable<SelectListItem> Accounts { get; set; }
-        public IEnumerable<SelectListItem> Payments { get; set; }
-        public IEnumerable<SelectListItem> ServiceTypes { get; set; }
+        public string DateToday { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
+        public string TimeNow { get; set; } = DateTime.Now.ToString(@"HH\:mm");
+        public IEnumerable<SelectListItem>? Accounts { get; set; } = new List<SelectListItem>();
+        public IEnumerable<SelectListItem>? Payments { get; set; } = new List<SelectListItem>();
+        public IEnumerable<SelectListItem>? ServiceTypes { get; set; } = new List<SelectListItem>();
         public AppointmentItemInsertVM InsertAppointment { get; set; } = new();
 
         public static InsertAppointmentVM ToViewModel(AlgAppointment appountment, IEnumerable<AdmAccount> accounts, IEnumerable<AlgPaymentType> payements, IEnumerable<AlgServiceType> services)

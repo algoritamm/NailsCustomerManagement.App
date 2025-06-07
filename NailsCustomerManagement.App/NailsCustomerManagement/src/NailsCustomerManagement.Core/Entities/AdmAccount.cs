@@ -29,11 +29,11 @@ public partial class AdmAccount
 
     public string InsertUser { get; set; } = null!;
 
-    public string InsertDate { get; set; } = null!;
+    public DateTime InsertDate { get; set; }
 
     public string? UpdateUser { get; set; }
 
-    public string? UpdateDate { get; set; }
+    public DateTime? UpdateDate { get; set; }
 
     public virtual ICollection<AdmAccountRole> AdmAccountRoles { get; set; } = new List<AdmAccountRole>();
 

@@ -15,7 +15,7 @@ namespace NailsCustomerManagement.Application.ViewModels.AppointmentItemVM
         public List<AppointmentItemDataTableVM> AppointmentItems { get; set; }
         public List<AppointmentItemStatusVM> FilterStatuses { get; set; }
 
-        public static AppointmentItemIndexVM ToViewModel(List<AppointmentItemDataTableDto> items, IEnumerable<AlgAppointmentItemStatus> statuses)
+        public static AppointmentItemIndexVM ToViewModel(List<AppointmentItemDataTableDto> items, IEnumerable<AlgAppointmentItemStatus> statuses, int? loggedUserId)
         {
             return new AppointmentItemIndexVM()
             {
@@ -39,6 +39,8 @@ namespace NailsCustomerManagement.Application.ViewModels.AppointmentItemVM
                     ServiceName = t.ServiceName ?? string.Empty,
                     ServicePrice = t.ServicePrice,
                     AccountFullName = t.AccountFullName ?? string.Empty,
+                    CanUpdateAppointmentItem = t.AccountId == loggedUserId,
+                    CanDeleteAppointmentItem = t.AccountId == loggedUserId,
                 }).ToList(),
                 FilterStatuses = statuses.Where(x => x.AppointmentItemStatusParentId.HasValue).Select(s => new AppointmentItemStatusVM() { 
                     StatusId = s.AppointmentItemStatusId,

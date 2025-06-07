@@ -11,17 +11,18 @@ public partial class AlgAppointment
 
     public int CustomerId { get; set; }
 
-    public string AppointmentCreatedDate { get; set; } = null!;
+    public DateTime AppointmentCreatedDate { get; set; }
 
     public int AppointmentStatusId { get; set; }
+    public int AccountId { get; set; }
 
     public string InsertUser { get; set; } = null!;
 
-    public string InsertDate { get; set; } = null!;
+    public DateTime InsertDate { get; set; }
 
     public string? UpdateUser { get; set; }
 
-    public string? UpdateDate { get; set; }
+    public DateTime? UpdateDate { get; set; }
 
     public virtual ICollection<AlgAppointmentItem> AlgAppointmentItems { get; set; } = new List<AlgAppointmentItem>();
 

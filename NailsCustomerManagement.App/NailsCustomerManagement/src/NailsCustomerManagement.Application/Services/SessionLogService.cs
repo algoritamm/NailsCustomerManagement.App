@@ -31,5 +31,17 @@ namespace NailsCustomerManagement.Application.Services
             _unitOfWork.Complete(); 
             return session.SessionId;
         }
+
+        public void UpdateSessionLogById(int sessionId)
+        {
+            var session = _unitOfWork.SessionLogRepo.GetSessionLog(sessionId);
+            
+            if (session == null)
+                return;
+            
+            session.SessionEndedDate = DateTime.Now;
+            _unitOfWork.SessionLogRepo.UpdateSessionLog(session);
+            _unitOfWork.Complete();
+        }
     }
 }

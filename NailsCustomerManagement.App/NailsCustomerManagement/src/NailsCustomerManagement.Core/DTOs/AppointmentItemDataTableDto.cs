@@ -22,5 +22,6 @@ namespace NailsCustomerManagement.Core.DTOs
         public int ServicePrice { get; set; }
         public string CustomerFullName { get; set; } = null!;
         public string AccountFullName { get; set; } = null!;
+        public int AccountId { get; set; }
     }
 }

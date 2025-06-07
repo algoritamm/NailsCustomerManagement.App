@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace NailsCustomerManagement.Core.Interfaces.Infrastructure
 {
-    public interface ISessionLogRepository
+    public interface ICustomerRepository
     {
-        SysSessionLog? GetSessionLog(int id);
-        void InsertSessionLog(SysSessionLog sessionlog);
-        void UpdateSessionLog(SysSessionLog sessionLog);
+        void InsertCustomer(AlgCustomer customer);
     }
 }

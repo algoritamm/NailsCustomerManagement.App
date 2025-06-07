@@ -19,11 +19,11 @@ public partial class AdmRole
 
     public string InsertUser { get; set; } = null!;
 
-    public string InsertDate { get; set; } = null!;
+    public DateTime InsertDate { get; set; }
 
     public string? UpdateUser { get; set; }
 
-    public int? UpdateDate { get; set; }
+    public DateTime? UpdateDate { get; set; }
 
     public virtual ICollection<AdmAccountRole> AdmAccountRoles { get; set; } = new List<AdmAccountRole>();
 

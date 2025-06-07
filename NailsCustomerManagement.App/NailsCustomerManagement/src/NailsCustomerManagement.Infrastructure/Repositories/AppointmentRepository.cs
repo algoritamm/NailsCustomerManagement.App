@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NailsCustomerManagement.Core.DTOs;
 using NailsCustomerManagement.Core.Entities;
+using NailsCustomerManagement.Core.Exceptions;
 using NailsCustomerManagement.Core.Interfaces.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,12 @@ namespace NailsCustomerManagement.Infrastructure.Repositories
             _context = context;
         }
 
-        public CustomerAppointmentDto GetCustomersAppointmentsForDataTable()
+        public void InsertAppointment(AlgAppointment appointment)
+        {
+            _context.AlgAppointments.Add(appointment);
+        }
+
+        public CustomerAppointmentDto GetCustomersAppointmentsForDataTable(int? userId)
         {
             CustomerAppointmentDto dataTableDto = new CustomerAppointmentDto();
 
@@ -32,6 +38,7 @@ namespace NailsCustomerManagement.Infrastructure.Repositories
 
             dataTableDto.AppointmentDetailsDtos = _context.AlgAppointments.Include(x => x.Customer)
                                                                             .Include(y => y.AppointmentStatus)
+                                                                            .Where(x => !userId.HasValue || x.AccountId == userId)
                                                                             .Select(d => new AppointmentDetailsDto()
                                                                             {
                                                                                 AppointmentId = d.AppointmentId,
@@ -43,6 +50,7 @@ namespace NailsCustomerManagement.Infrastructure.Repositories
                                                                                     StatusName = d.AppointmentStatus.AppointmentStatusNameEng,
                                                                                     StatusClass = d.AppointmentStatus.AppointmentStatusClass
                                                                                 },
+                                                                                AccountId = d.AccountId,    
                                                                             }).ToList();
             return dataTableDto;
         }
@@ -72,6 +80,7 @@ namespace NailsCustomerManagement.Infrastructure.Repositories
                     CustomerFullName = $"{x.Customer.CustomerFirstName} {x.Customer.CustomerLastName}",
                     AccountFullName = $"{x.Account.FirstName} {x.Account.LastName}",
                     AppointmentStatusId = x.AppointmentItemStatusId,
+                    AccountId = x.AccountId,
 
                 }).ToList();
         }
@@ -140,6 +149,35 @@ namespace NailsCustomerManagement.Infrastructure.Repositories
         public IEnumerable<AlgAppointmentStatus> GetAppointmentStatuses()
         {
             return _context.AlgAppointmentStatuses;
+        }
+
+        public AlgAppointmentItem GetAppointmentItem(int appointmentItemId)
+        {
+            return _context.AlgAppointmentItems.Find(appointmentItemId) ?? new ();
+        }
+
+        public void InsertAppointmentItem(AlgAppointmentItem appointmentItem)
+        {
+            _context.AlgAppointmentItems.Add(appointmentItem);
+        }
+
+        public void UpdateAppointmentItem(AlgAppointmentItem appointmentItem)
+        {
+            _context.AlgAppointmentItems.Update(appointmentItem);
+        }
+
+        public void DeleteAppointmentItem(int appointmentItemId)
+        {
+            var appointmentItem = _context.AlgAppointmentItems.Find(appointmentItemId);
+
+            if (appointmentItem == null) throw new DeleteAppointmentItemException($"Item with primary key {appointmentItemId} doesn't exists in table [alg_APPOINTMENT_ITEM]");
+
+            _context.AlgAppointmentItems.Remove(appointmentItem);
+        }
+
+        public void UpdateAppointment(AlgAppointment appointment)
+        {
+            _context.AlgAppointments.Update(appointment);
         }
     }
 }

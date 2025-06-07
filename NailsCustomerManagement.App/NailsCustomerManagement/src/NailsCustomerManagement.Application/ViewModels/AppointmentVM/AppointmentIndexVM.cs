@@ -12,7 +12,7 @@ namespace NailsCustomerManagement.Application.ViewModels.AppointmentVM
         public List<AppointmentVM> Appointments { get; set; }
         public List<AppointmentStatusVM> FilterStatuses { get; set; }
 
-        public static AppointmentIndexVM ToViewModel(CustomerAppointmentDto appointmentDto)
+        public static AppointmentIndexVM ToViewModel(CustomerAppointmentDto appointmentDto, int loggedUserId)
         {
             return new AppointmentIndexVM()
             {
@@ -28,6 +28,7 @@ namespace NailsCustomerManagement.Application.ViewModels.AppointmentVM
                         StatusName = x.Status.StatusName,
                         StatusClass = x.Status.StatusClass,
                     },
+                    CanChangeAppointment = x.AccountId == loggedUserId,
                 }).ToList(),
                 FilterStatuses = appointmentDto.FilterStatuses.Select(s => new AppointmentStatusVM()
                 {
@@ -45,6 +46,7 @@ namespace NailsCustomerManagement.Application.ViewModels.AppointmentVM
         public string AppointmentName { get; set; } = null!;
         public string CustomerFullName { get; set; } = null!;
         public AppointmentStatusVM Status { get; set; } = null!;
+        public bool CanChangeAppointment {  get; set; }
     }
 
     public class AppointmentStatusVM

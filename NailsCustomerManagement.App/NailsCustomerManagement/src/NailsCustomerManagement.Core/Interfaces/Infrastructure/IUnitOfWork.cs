@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace NailsCustomerManagement.Core.Interfaces.Infrastructure
         IAppointmentRepository AppointmentRepo { get; }
         IPayementTypeRepository PayementTypeRepo { get; }
         IServiceTypeRepository ServiceTypeRepo { get; }
+        ICustomerRepository CustomerRepo { get; }
+        DbContext Context { get; }
 
         int Complete();
         void Dispose();

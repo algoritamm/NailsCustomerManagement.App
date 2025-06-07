@@ -13,7 +13,7 @@ public partial class AlgAppointmentItem
 
     public int CustomerId { get; set; }
 
-    public string AppointmentItemCretedDate { get; set; } = null!;
+    public DateTime AppointmentItemCretedDate { get; set; }
 
     public int ServiceTypeId { get; set; }
 
@@ -31,11 +31,11 @@ public partial class AlgAppointmentItem
 
     public string InsertUser { get; set; } = null!;
 
-    public string? InsertDate { get; set; }
+    public DateTime? InsertDate { get; set; }
 
     public string? UpdateUser { get; set; }
 
-    public string? UpdateDate { get; set; }
+    public DateTime? UpdateDate { get; set; }
 
     public virtual AdmAccount Account { get; set; } = null!;
 

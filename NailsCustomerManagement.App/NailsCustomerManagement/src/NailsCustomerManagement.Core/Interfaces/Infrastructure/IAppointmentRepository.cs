@@ -10,12 +10,18 @@ namespace NailsCustomerManagement.Core.Interfaces.Infrastructure
 {
     public interface IAppointmentRepository
     {
+        void DeleteAppointmentItem(int appointmentItemId);
         AlgAppointment GetAppointment(int appointmentId);
         IEnumerable<IGrouping<DateTime, AppointmentSchedulerDto>> GetAppointmentForScheduler(byte statusId, int accountId);
         IEnumerable<AppointmentSchedulerDto> GetAppointmentForSchedulerByDate(byte statusId, int accountId, DateTime selectedDate);
+        AlgAppointmentItem GetAppointmentItem(int appointmentItemId);
         List<AppointmentItemDataTableDto> GetAppointmentItemsForDataTable(int appointmentId, int? accountId);
         IEnumerable<AlgAppointmentItemStatus> GetAppointmentItemStatuses();
         IEnumerable<AlgAppointmentStatus> GetAppointmentStatuses();
-        CustomerAppointmentDto GetCustomersAppointmentsForDataTable();
+        CustomerAppointmentDto GetCustomersAppointmentsForDataTable(int? userId);
+        void InsertAppointment(AlgAppointment appointment);
+        void InsertAppointmentItem(AlgAppointmentItem appointmentItem);
+        void UpdateAppointment(AlgAppointment appointment);
+        void UpdateAppointmentItem(AlgAppointmentItem appointmentItem);
     }
 }
