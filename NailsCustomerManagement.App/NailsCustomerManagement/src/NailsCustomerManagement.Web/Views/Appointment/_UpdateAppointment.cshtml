@@ -1,0 +1,104 @@
+﻿@model NailsCustomerManagement.Application.ViewModels.AppointmentItemVM.AppointmentItemUpdateVM
+
+<div class="modal fade" id="updateAppointmentItemModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@SharedLocalizer["Insert appointment item"]</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="updateAppointmentForm">
+                <input type="hidden" asp-for="AppointmentItemId" />
+                <div class="row">
+                    <label asp-for="SelectedStatusId" class="col-lg-4 col-form-label">@SharedLocalizer["Choose status"].Value<span class="requiredInput">*</span>:</label>
+                    <div class="form-group col-lg-8">
+                        <select asp-for="SelectedStatusId" class="form-control">
+                            <option selected="selected" value="">@SharedLocalizer["--Please select--"]</option>
+                            @foreach(var status in Model.Statuses)
+                            {
+                                var isSelected = status.Value.Trim().Equals(Model.AppointmentItemStatusId.ToString());
+                                if(isSelected)
+                                {
+                                    <option selected="selected" value="@status.Value">@status.Text</option>
+                                }
+                                else
+                                {
+                                    <option value="@status.Value">@status.Text</option>
+                                }
+
+                            }
+                        </select>
+                        <span asp-validation-for="SelectedStatusId"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="ItemDate" class="col-lg-4 col-form-label">@SharedLocalizer["Date"]<span class="requiredInput">*</span>:</label>
+                    <div class="col-lg-8">
+                        <div class="input-group date datepickers" id="itemDatePicker" data-target-input="nearest">
+                            <input asp-for="ItemDate" type="text" data-target="#itemDatePicker" class="form-control datetimepicker datetimepicker-input cursorPointer" data-toggle="datetimepicker" value="@Model.AppointmentItemDate" />
+                            <div class="input-group-append" data-target="#itemDatePicker" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                            </div>
+                        </div>
+                        <span asp-validation-for="ItemDate"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="ItemTime" class="col-lg-4 col-form-label">@SharedLocalizer["Time"]<span class="requiredInput">*</span>:</label>
+                    <div class="col-lg-8">
+                        <div class="input-group time timepickers" id="itemTimePicker" data-target-input="nearest">
+                            <input asp-for="ItemTime" type="text" class="form-control datetimepicker-input" data-target="#itemTimePicker" value="@Model.AppointmentItemTime" />
+                            <div class="input-group-append" data-target="#itemTimePicker" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="far fa-clock"></i></div>
+                            </div>
+                        </div>
+                        <span asp-validation-for="ItemTime"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label asp-for="SelectedPaymentTypeId" class="col-lg-4 col-form-label">@SharedLocalizer["Choose payment type"].Value<span class="requiredInput">*</span>:</label>
+                    <div class="form-group col-lg-8">
+                        <select asp-for="SelectedPaymentTypeId" class="form-control">
+                            <option selected="selected" value="">@SharedLocalizer["--Please select--"]</option>
+                            @foreach(var payment in Model.Payments)
+                            {
+                                var isSelected = payment.Value.Trim().Equals(Model.PaymentTypeId.ToString());
+                                if(isSelected)
+                                {
+                                    <option selected="selected" value="@payment.Value">@payment.Text</option>
+                                }
+                                else
+                                {
+                                    <option value="@payment.Value">@payment.Text</option>
+                                }
+
+                            }
+                        </select>
+                        <span asp-validation-for="SelectedPaymentTypeId"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label asp-for="AppointmentName" class="col-lg-12 col-form-label">@SharedLocalizer["Title"]<span class="requiredInput">*</span>:</label>
+                    <div class="form-group col-lg-12">
+                        <textarea asp-for="AppointmentName" class="form-control" rows="3"></textarea>
+                        <span asp-validation-for="AppointmentName"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label asp-for="AmountPaid" class="col-lg-4 col-form-label">@SharedLocalizer["Amount paid"]<span class="requiredInput">*</span>:</label>
+                    <div class="form-group col-lg-8">
+                        <input asp-for="AmountPaid" class="form-control" />
+                        <span asp-validation-for="AmountPaid"></span>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-default" data-dismiss="modal" title="@SharedLocalizer["Cancel"].Value" value="@SharedLocalizer["Cancel"].Value" />
+                <input type="button" id="btnConfirmeUpdateAppointment" class="btn btn-primary" title="@SharedLocalizer["Confirm"].Value" value="@SharedLocalizer["Confirm"]" />
+            </div>
+        </div>
+    </div>
+</div>
+

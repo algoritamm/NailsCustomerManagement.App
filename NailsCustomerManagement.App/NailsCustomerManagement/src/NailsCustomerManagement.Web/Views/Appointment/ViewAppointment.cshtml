@@ -54,16 +54,20 @@
                                 <th>@SharedLocalizer["Service"]</th>
                                 <th>@SharedLocalizer["Service price"]</th>
                                 <th>@SharedLocalizer["Employee"]</th>
+                                <th><!--Buttons--></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model.AppointmentItems)
                             {
+                                var minutes = @item.AppointmentItemTime.Minutes == 0 ? "00" : @item.AppointmentItemTime.Minutes.ToString();
+                                var hours = @item.AppointmentItemTime.Hours == 0 ? "00" : @item.AppointmentItemTime.Hours.ToString();
+
                                 <tr data-status-id="@item.AppointmentStatus?.StatusId">
                                     <td>@item.AppointmentItemId</td>
                                     <td>@item.AppointmentTitle</td>
                                     <td>@item.AppointmentItemDate.Day.@item.AppointmentItemDate.Month.@item.AppointmentItemDate.Year.</td>
-                                    <td>@item.AppointmentItemTime.Hours.ToString():@item.AppointmentItemTime.Minutes.ToString()</td>
+                                    <td>@hours:@minutes</td>
                                     <td>@item.AmountPaid</td>
                                     <td style="background-color: @item.AppointmentStatus?.StatusColor; color: white;">
                                         @item.AppointmentStatus?.StatusName
@@ -72,6 +76,18 @@
                                     <td>@item.ServiceName</td>
                                     <td>@item.ServicePrice</td>
                                     <td>@item.AccountFullName</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            @if (item.CanUpdateAppointmentItem)
+                                            {
+                                                <button id="updateAppointmentItemBtn" data-item-id="@item.AppointmentItemId" class="btn btn-sm btn-default" title="@SharedLocalizer["Update item"]"><i class="fa-regular fa-pen-to-square"></i></button>
+                                            }
+                                            @if (item.CanDeleteAppointmentItem)
+                                            {
+                                                <button id="deleteAppointmentItemBtn" data-item-id="@item.AppointmentItemId" class="btn btn-sm btn-default" title="@SharedLocalizer["Delete item"]"><i class="fa-solid fa-trash"></i></button>
+                                            }
+                                        </div>                                       
+                                    </td>
                                 </tr>
                             }
                         </tbody>
@@ -86,6 +102,12 @@
 <!--Insert appointment open modal-->
 <div id="insertAppointmentDiv"></div>
 
+<!--Insert appointment open modal-->
+<div id="updateAppointmentItemDiv"></div>
+
+<!--Delete modal-->
+<div id="deleteAppointmentItemDiv"></div>
+
 @section Scripts {
     <script src="~/lib/tinymce-5/tinymce.min.js"></script>
     <script src="~/js/appointment/viewAppointment.js"> </script>
@@ -94,7 +116,7 @@
             $('#appointmentItemsTable').DataTable({
                 "order": [],
                 "language": {
-                    "url": "app.sharedLocalizer.dataTable",
+                    // "url": "app.sharedLocalizer.dataTable",
                     "lengthMenu": "_MENU_"
                 },
                 "columnDefs": [

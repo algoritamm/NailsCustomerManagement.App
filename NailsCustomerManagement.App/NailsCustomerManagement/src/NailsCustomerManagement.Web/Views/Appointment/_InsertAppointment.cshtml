@@ -1,13 +1,20 @@
 ﻿@model NailsCustomerManagement.Application.ViewModels.AppointmentVM.InsertAppointmentVM
 
-<modal size="modal-m" id="insertAppointmentModal" title="@SharedLocalizer["Insert new appointment"].Value" data-backdrop="static" data-keyboard="false">
-    <modal-body>
+<div class="modal fade" id="insertAppointmentModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@SharedLocalizer["Insert appointment item"]</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         <form id="insertAppointmentForm">
             <input type="hidden" asp-for="AppointmentId" />
             <input type="hidden" asp-for="CustomerId" />
             <div class="row">
-                <label asp-for="InsertAppointment.SelectedServiceTypeId" class="col-lg-12 col-form-label">@SharedLocalizer["Choose service type"].Value<span class="requiredInput">*</span>:</label>
-                <div class="form-group col-lg-12">
+                <label asp-for="InsertAppointment.SelectedServiceTypeId" class="col-lg-4 col-form-label">@SharedLocalizer["Choose service type"].Value<span class="requiredInput">*</span>:</label>
+                <div class="form-group col-lg-8">
                     <select asp-for="InsertAppointment.SelectedServiceTypeId" class="form-control" asp-items="Model.ServiceTypes">
                         <option selected="selected" value="">@SharedLocalizer["--Please select--"]</option>
                         
@@ -16,11 +23,11 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label asp-for="InsertAppointment.ItemDate" class="col-lg-3 col-form-label text-right">@SharedLocalizer["Date"]:</label>
+                    <label asp-for="InsertAppointment.ItemDate" class="col-lg-4 col-form-label">@SharedLocalizer["Date"]<span class="requiredInput">*</span>:</label>
                 <div class="col-lg-8">
-                    <div class="input-group date datepickers" id="selectedProtocolItemDueDate" data-target-input="nearest">
-                        <input asp-for="InsertAppointment.ItemDate" type="text" data-target="#selectedProtocolItemDueDate" class="form-control datetimepicker datetimepicker-input cursorPointer" data-toggle="datetimepicker" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
-                        <div class="input-group-append" data-target="#selectedProtocolItemDueDate" data-toggle="datetimepicker">
+                    <div class="input-group date datepickers" id="itemDatePicker" data-target-input="nearest">
+                        <input asp-for="InsertAppointment.ItemDate" type="text" data-target="#itemDatePicker" class="form-control datetimepicker datetimepicker-input cursorPointer" data-toggle="datetimepicker" value="@Model.DateToday"/>
+                        <div class="input-group-append" data-target="#itemDatePicker" data-toggle="datetimepicker">
                             <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                         </div>
                     </div>
@@ -28,33 +35,39 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label asp-for="InsertAppointment.ItemTime" class="col-lg-3 col-form-label text-right">@SharedLocalizer["Time"]<span class="requiredInput">*</span>:</label>
+                    <label asp-for="InsertAppointment.ItemTime" class="col-lg-4 col-form-label">@SharedLocalizer["Time"]<span class="requiredInput">*</span>:</label>
                 <div class="col-lg-8">
-                    <input asp-for="InsertAppointment.ItemTime" class="form-control" placeholder="" autocomplete="off" maxlength="18">
+                    <div class="input-group time timepickers" id="itemTimePicker" data-target-input="nearest">
+                        <input asp-for="InsertAppointment.ItemTime" type="text" class="form-control datetimepicker-input" data-target="#itemTimePicker" value="@Model.TimeNow"/>
+                        <div class="input-group-append" data-target="#itemTimePicker" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="far fa-clock"></i></div>
+                        </div>
+                    </div>
                     <span asp-validation-for="InsertAppointment.ItemTime"></span>
-                </div>
+                </div>   
             </div>
             <div class="row">
-                <label asp-for="InsertAppointment.SelectedPaymentTypeId" class="col-lg-12 col-form-label">@SharedLocalizer["Choose payment type"].Value<span class="requiredInput">*</span>:</label>
-                <div class="form-group col-lg-12">
-                    <select asp-for="InsertAppointment.SelectedPaymentTypeId" class="form-control" asp-items="Model.ServiceTypes">
+                <label asp-for="InsertAppointment.SelectedPaymentTypeId" class="col-lg-4 col-form-label">@SharedLocalizer["Choose payment type"].Value<span class="requiredInput">*</span>:</label>
+                <div class="form-group col-lg-8">
+                    <select asp-for="InsertAppointment.SelectedPaymentTypeId" class="form-control" asp-items="Model.Payments">
                         <option selected="selected" value="">@SharedLocalizer["--Please select--"]</option>
-
                     </select>
                     <span asp-validation-for="InsertAppointment.SelectedPaymentTypeId"></span>
                 </div>
             </div>
             <div class="row">
-                <label class="col-lg-12 col-form-label">@SharedLocalizer["Title"]:</label>
+                <label asp-for="InsertAppointment.AppointmentName" class="col-lg-12 col-form-label">@SharedLocalizer["Title"]<span class="requiredInput">*</span>:</label>
                 <div class="form-group col-lg-12">
                     <textarea asp-for="InsertAppointment.AppointmentName" class="form-control" rows="3" placeholder="@SharedLocalizer["Title"]"></textarea>
-                </div>
+                    <span asp-validation-for="InsertAppointment.AppointmentName"></span>
+                </div>   
             </div>
         </form>
-    </modal-body>
-    <modal-footer id="btn-modal-cancel" dismiss-text="@SharedLocalizer["Cancel"].Value">
-        <button id="btnConfirmeInsertAppointment" class="btn btn-primary" title="@SharedLocalizer["Confirm"].Value">@SharedLocalizer["Confirm"].Value</button>
-    </modal-footer>
-</modal>
-
+            <div class="modal-footer">
+                <input type="button" class="btn btn-default" data-dismiss="modal" title="@SharedLocalizer["Cancel"].Value" value="@SharedLocalizer["Cancel"].Value" />
+                <input type="button" id="btnConfirmeInsertAppointment" class="btn btn-primary" title="@SharedLocalizer["Confirm"].Value" value="@SharedLocalizer["Confirm"]" />
+            </div>
+        </div>
+    </div>
+</div>
 

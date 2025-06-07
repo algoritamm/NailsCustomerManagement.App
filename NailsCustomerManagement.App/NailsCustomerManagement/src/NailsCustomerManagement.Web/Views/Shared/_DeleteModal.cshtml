@@ -1,0 +1,22 @@
+﻿@{
+    var id = ViewData["Id"];
+}
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@SharedLocalizer["Delete"]</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="delete-modal-body">
+                <span>@SharedLocalizer["Are you sure you want to delete selected item?"].Value</span>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-default" data-dismiss="modal" title="@SharedLocalizer["Cancel"].Value" value="@SharedLocalizer["Cancel"].Value" />
+                <input type="button" data-id="@id" id="btnConfirmDelete" class="btn btn-danger" title="@SharedLocalizer["Delete"].Value" value="@SharedLocalizer["Delete"]" />
+            </div>
+        </div>
+    </div>
+</div>

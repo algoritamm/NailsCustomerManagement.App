@@ -47,7 +47,7 @@ namespace NailsCustomerManagement.Web.Controllers
             var sessionId = HttpContext.Session.GetInt32("SessionID");
             if (sessionId != null)
             {
-                
+                _sessionService.UpdateSessionLogById(sessionId ?? 0);
                 HttpContext.Session.Clear();
             }
 
@@ -130,7 +130,7 @@ namespace NailsCustomerManagement.Web.Controllers
                 int sessionId = _sessionService.InsertSessionLog(new SysSessionLog()
                 {
                     SessionUser = account.UserName,
-                    SessionStartedDate = DateTime.UtcNow.ToString()
+                    SessionStartedDate = DateTime.UtcNow
                 });
 
                 HttpContext.Session.SetInt32("SessionID", sessionId);

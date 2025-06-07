@@ -8,23 +8,6 @@ body {
     padding: 0;
 }
 
-/*textarea:hover,
-input:hover,
-textarea:active,
-input:active,
-textarea:focus,
-input:focus,
-button:focus,
-button:active,
-button:hover,
-label:focus,
-.btn:active,
-.btn.active {
-    outline: 0px !important;
-    -webkit-appearance: none;
-    box-shadow: none !important;
-}*/
-
 .wrapper {
     position: relative;
     padding-bottom: 42px;
@@ -53,10 +36,10 @@ label:focus,
     margin-top: -2px;
 }
 
-    .profile-image i {
-        margin-left: auto;
-        margin-right: auto;
-    }
+.profile-image i {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .profile-image-dropdown i {
     margin-left: auto;
@@ -99,6 +82,7 @@ label:focus,
 .field-validation-error {
     color: #fb6b5b;
 }
+
 /* Breadcrumb */
 .breadcrumb-separator {
     padding: 7px;
@@ -115,68 +99,6 @@ label:focus,
     }
 /* Breadcrumb END */
 
-/* TEMPLATES CATALOG */
-#templatesCatalog .collapse {
-    padding-top: 1rem;
-    padding-left: 1.25rem;
-    padding-right: .25rem;
-}
-
-    #templatesCatalog .collapse .col-sm-6 {
-        padding-bottom: 1rem;
-        font-size: .9rem;
-        padding-left: 0;
-        padding-right: 1rem;
-    }
-
-#templatesCatalog .card {
-    margin-bottom: 0px;
-}
-
-#templatesCatalog .card-info .card-header {
-    background-color: #00AEDC;
-    border-top-left-radius: 0.25rem !important;
-    border-top-right-radius: 0.25rem !important;
-    padding-top: .5rem !important;
-    padding-bottom: .5rem !important;
-}
-
-#templatesCatalog .card .card-header {
-    padding-right: .5rem;
-    padding-top: .2rem;
-    padding-bottom: .2rem;
-}
-
-    #templatesCatalog .card .card-header:first-child {
-        padding-left: .5rem;
-    }
-
-#templatesCatalog .fade {
-    transition: opacity 0s linear;
-}
-
-#templatesCatalog .btn-link {
-    color: #343a40;
-}
-
-    #templatesCatalog .btn-link:hover {
-        color: #0fa0d0;
-    }
-
-#templatesCatalog .card-body {
-    padding: .5rem;
-}
-
-#templatesCatalog button i {
-    padding-top: .25rem;
-}
-/* TEMPLATES CATALOG END */
-
-.catalog-title {
-    padding-bottom: 15px;
-}
-
-/*custom badges END*/
 table.dataTable tr td {
     vertical-align: middle !important;
 }
@@ -202,15 +124,14 @@ table {
   /*  white-space: nowrap !important;*/
 }
 
-    .card-header h3 {
-        font-size: .9rem !important;
-        margin-top: -2px;
-    }
+.card-header h3 {
+    font-size: .9rem !important;
+    margin-top: -2px;
+}
 
 .card-body {
     padding: 15px;
 }
-/**/
 
 /*DataTable*/
 .dataTable label {
@@ -241,7 +162,7 @@ table {
 /* Left Navbar */
 .brand-text {
     color: #c2c7d0;
-    font-size: 19px;
+    font-size: 14px;
 }
 
 .brand-link .brand-image {
@@ -256,16 +177,15 @@ table {
     padding-left: 5px;
 }
 
-    .user-panel .image {
-        font-size: 1.3rem;
-        cursor: pointer;
-        color: #ebecec;
-    }
+.user-panel .image {
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #ebecec;
+}
 
-        .user-panel .image .fa-user {
-            padding-top: .7rem;
-        }
-
+.user-panel .image .fa-user {
+    padding-top: .7rem;
+}
 /* Left Navbar END */
 
 /* Home panel */
@@ -521,64 +441,8 @@ table .tableHide {
     top: 38px!important;
 }
 
-/*STATUS COLORS*/
-/*.algo-red, .cardsview .dt-algo-red {
-    background: #dc3545;
-}
-
-.algo-blue, .cardsview .dt-algo-blue {
-    background: #3c8dbc;
-}
-
-.algo-dark-blue, .cardsview .dt-algo-dark-blue {
-    background: #007bff;
-}
-
-.algo-green, .cardsview .dt-algo-green {
-    background: #28a745;
-}
-
-.algo-yellow, .cardsview .dt-algo-yellow {
-    background: #ffc107;
-}
-
-.algo-orange, .cardsview .dt-algo-orange {
-    background: #fd7e14;
-}
-
-.algo-gray, .cardsview .dt-algo-gray {
-    background: #989898;
-}
-
-.algo-soft-blue, .cardsview .dt-algo-soft-blue {
-    background: #17a2b8;
-}*/
-/*CASE WORKFLOW MODAL*/
-#viewCaseHistoryModal .modal-body {
-    padding: 0px;
-}
-
-#viewCaseHistoryModal th {
-    border-top: 0px !important;
-}
-/*END*/
-
-#caseLocation {
-    text-decoration: underline !important;
-    font-weight: 700;
-}
-
 .toast {
-    /* background-color: #ffc107 !important;*/
     opacity: 1 !important;
-}
-
-#blackListWarning {
-    display: none;
-}
-
-#accountB2bAlert {
-    display: none;
 }
 
 .alert {
@@ -610,10 +474,6 @@ table .tableHide {
     padding-right: 5px !important;
 }
 
-.dt-checkboxes-select tr {
-    /*  height: 38px; */
-}
-
 .dataTables_length {
     float: left;
 }
@@ -635,19 +495,8 @@ table .tableHide {
     bottom: 0px;
 }
 
-    .modalLoader img {
-        width: 60px;
-    }
-/*OZ Viewer*/
-#OZViewer {
-    min-height: 100% !important;
-    width: 100% !important;
-    border: none !important;
-    height: 1200px;
-}
-
-.oz_ui_layout {
-    box-sizing: content-box !important;
+.modalLoader img {
+    width: 60px;
 }
 
 #pageTitle {
@@ -669,27 +518,6 @@ table .tableHide {
     cursor: pointer;
 }
 
-/* Users view */
-#insertUserRoleModal .modal-body {
-    max-height: 400px;
-    overflow: auto;
-}
-
-.alignSwitch {
-    padding-left: 60px;
-}
-
-.detailsTable .btnRow {
-    background-color: #d4e0f7 !important;
-}
-/* Users view END */
-
-/* Roles view */
-#insertPermissionRoleModal .modal-body {
-    max-height: 400px;
-    overflow: auto;
-}
-/* Roles view END*/
 .pointer {
     cursor: pointer;
 }
@@ -835,23 +663,7 @@ label:not(.form-check-label):not(.custom-file-label) {
     border-radius: 0.3rem;
     /*height: 150px !important;*/
 }
-
-#signModal .modal-body { /* for IE */
-    height: 100%;
-}
 /* PDF Canvas END */
-.btn-primary {
-    /*background-color: #0f9fcf !important;
-    border-color: #0f9fcf !important;*/
-}
-
-.btn-secondary {
-    /*background-color: #5f6062 !important;
-    border-color: #5f6062 !important;*/
-}
-
-.active {
-}
 
 /* Loader */
 .overlay {
@@ -869,9 +681,9 @@ body.loading { /* Turn off scrollbar when body element has the loading class */
     overflow: hidden;
 }
 
-    body.loading .overlay { /* Make spinner image visible when body element has the loading class */
-        display: block;
-    }
+body.loading .overlay { /* Make spinner image visible when body element has the loading class */
+    display: block;
+}
 /* Loader END */
 
 .customDropdown { /* DataTable Show/Hide column */
@@ -923,7 +735,7 @@ span.form-check input, span.form-check label {
     background: #ffffff;
 }
 
-/* Login page END */
+/* Login page */
 #loginImage{
     height: 35px;
 }
@@ -947,25 +759,6 @@ span.form-check input, span.form-check label {
 }
 /* Login page END */
 
-#protocolItemStatus { /* Change protocolItem status modal */
-    height: fit-content;
-    margin-top: 10px;
-}
-
-/* Dashboard card box */
-.cardBoxColorPrimary {
-    background-color: #00AEDC;
-    color: #ffffff;
-}
-
-/* The switch - the box around the slider */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 27px;
-    height: 15px;
-}
-
 /* Hide default HTML checkbox */
 .switch input {
     opacity: 0;
@@ -973,53 +766,6 @@ span.form-check input, span.form-check label {
     height: 0;
 }
 
-/* The slider */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 12px;
-        width: 12px;
-        top: 1px;
-        left: 1px;
-        background-color: #edf0f2;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-input:checked + .slider {
-    background-color: #007bff;
-}
-
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(12.5px);
-    -ms-transform: translateX(12.5px);
-    transform: translateX(12.5px);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
 .btn-primary {
     background-color: #00AEDC !important
 }
@@ -1108,7 +854,7 @@ input:checked + .slider:before {
 }
 
 .navbar-nav-right{
-    position: fixed;
+    position: absolute !important;
     right: 10px !important;
     width: 150px;
     display: flex;
@@ -1162,4 +908,16 @@ input:checked + .slider:before {
 
 #appointmentItemsTable_info {
     display: none !important;
+}
+
+.modal-content .row {
+    padding: 5px 10px 10px 20px !important;
+}
+
+.delete-modal-body {
+    padding: 20px 20px 20px 20px !important;
+}
+
+.thead-table {
+    background-color: #00AEDC !important; 
 }

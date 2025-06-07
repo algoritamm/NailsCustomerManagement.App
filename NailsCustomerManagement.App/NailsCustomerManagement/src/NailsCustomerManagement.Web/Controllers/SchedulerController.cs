@@ -27,7 +27,7 @@ namespace NailsCustomerManagement.Web.Controllers
             try
             {
                 DateTime selectedDate = date ?? DateTime.Today;
-                var appointmentsForDataTable = _appointmentService.GetAppointmentForSchedulerForDataTableBydate((byte)AppointmentItemStatusEnum.Active, User.GetUserId(), selectedDate);
+                var appointmentsForDataTable = _appointmentService.GetAppointmentForSchedulerForDataTableBydate((byte)AppointmentItemStatusEnum.ActiveParent, User.GetUserId(), selectedDate);
                 var model = AppointmentSchedulerVM.ToViewModel(selectedDate, appointmentsForDataTable);
                 
                 return View(model);

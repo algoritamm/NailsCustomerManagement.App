@@ -27,6 +27,11 @@
                             <button id="btnFilterDismiss" class="btn btn-default btn-md-custom">@SharedLocalizer["Dismiss"]</button>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="form-group col-md-4 customButton">
+                            <button id="btnInsertCustomer" title="@SharedLocalizer["Insert new customer appointment"]" class=" btn btn-primary btnMarginBottom">@SharedLocalizer["Insert"]</button>
+                        </div>
+                    </div>
                 </div>
                 <div id="loading-indicator" class="loading-indicator" style="display:none;">
                     <div class="loading-spinner"></div>
@@ -53,6 +58,10 @@
                                     </td>
                                     <td class="cardFooterRight">
                                         <div class="btn-group">
+                                            @if(appointment.CanChangeAppointment)
+                                            {
+                                                <button id="updateAppointmentBtn" data-item-id="@appointment.AppointmentId" class="btn btn-sm btn-default" title="@SharedLocalizer["Update item"]"><i class="fa-regular fa-pen-to-square"></i></button>
+                                            }
                                             <a class="btn btn-sm btn-default" title="@SharedLocalizer["Open"]" href="/Appointment/ViewAppointment?appointmentId=@appointment.AppointmentId"><i class="far fa-folder-open"></i></a>
                                         </div>
                                     </td>
@@ -65,6 +74,12 @@
         </div>
     </div>
 </div>
+
+<!--Insert new customer appointment-->
+<div id="insertNewCustomerDiv"></div>
+
+<!--Insert new customer appointment-->
+<div id="updateAppointmentDiv"></div>
 
 @section Scripts {
     <script src="~/js/appointment/index.js"> </script>

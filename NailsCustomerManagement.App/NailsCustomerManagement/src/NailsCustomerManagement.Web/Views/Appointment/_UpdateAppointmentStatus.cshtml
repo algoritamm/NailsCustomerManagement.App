@@ -1,0 +1,43 @@
+﻿@model NailsCustomerManagement.Application.ViewModels.AppointmentVM.UpdateAppointmentVM
+
+<div class="modal fade" id="updateStatusModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@SharedLocalizer["Update appointment status"]</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="updateStatusForm">
+                <input type="hidden" asp-for="AppointmentId" />
+                <div class="row">
+                    <label asp-for="SelectedStatusId" class="col-lg-4 col-form-label">@SharedLocalizer["Choose status"].Value<span class="requiredInput">*</span>:</label>
+                    <div class="form-group col-lg-8">
+                        <select asp-for="SelectedStatusId" class="form-control">
+                            <option selected="selected" value="">@SharedLocalizer["--Please select--"]</option>
+                            @foreach (var status in Model.Statuses)
+                            {
+                                var isSelected = status.AppointmentStatusId == Model.AppointmentStatusId;
+                                if (isSelected)
+                                {
+                                    <option selected="selected" value="@status.AppointmentStatusId">@status.AppointmentStatusNameEng</option>
+                                }
+                                else
+                                {
+                                    <option value="@status.AppointmentStatusId">@status.AppointmentStatusNameEng</option>
+                                }
+
+                            }
+                        </select>
+                        <span asp-validation-for="SelectedStatusId"></span>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-default" data-dismiss="modal" title="@SharedLocalizer["Cancel"].Value" value="@SharedLocalizer["Cancel"].Value" />
+                <input type="button" id="btnConfirmeUpdateStatus" class="btn btn-primary" title="@SharedLocalizer["Confirm"].Value" value="@SharedLocalizer["Confirm"]" />
+            </div>
+        </div>
+    </div>
+</div>

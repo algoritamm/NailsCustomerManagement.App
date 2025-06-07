@@ -131,6 +131,7 @@ try
     builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
     builder.Services.AddScoped<IServiceTypeRepository, ServiceTypeRepository>();
     builder.Services.AddScoped<IPayementTypeRepository, PayementTypeRepository>();
+    builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
     builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
     //Application
     builder.Services.AddScoped<IAccountService, AccountService>();
